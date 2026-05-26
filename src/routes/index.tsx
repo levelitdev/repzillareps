@@ -255,7 +255,6 @@ function Reviews() {
 }
 
 function Contact() {
-  const [sent, setSent] = useState(false);
   return (
     <section id="kontakt" className="relative z-10 px-4 sm:px-8 py-24 max-w-3xl mx-auto">
       <div className="text-center mb-10">
@@ -264,66 +263,29 @@ function Contact() {
           Masz pytania? Napisz do nas.
         </h2>
       </div>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          setSent(true);
-          setTimeout(() => setSent(false), 4000);
-        }}
-        className="navy-glow rounded-lg p-6 sm:p-8 space-y-4"
-        style={{ background: "#0a0a0f", border: "1.5px solid #2040a0" }}
-      >
-        <div>
-          <label className="block text-xs text-[#aac4ff] mb-2 tracking-widest font-heading">IMIĘ</label>
-          <input
-            required
-            className="w-full bg-black border border-[#2040a0] text-white px-4 py-3 rounded outline-none focus:border-[#4a7fff] transition-colors"
-            placeholder="Jan Kowalski"
-          />
-        </div>
-        <div>
-          <label className="block text-xs text-[#aac4ff] mb-2 tracking-widest font-heading">EMAIL</label>
-          <input
-            required
-            type="email"
-            className="w-full bg-black border border-[#2040a0] text-white px-4 py-3 rounded outline-none focus:border-[#4a7fff] transition-colors"
-            placeholder="jan@example.com"
-          />
-        </div>
-        <div>
-          <label className="block text-xs text-[#aac4ff] mb-2 tracking-widest font-heading">WIADOMOŚĆ</label>
-          <textarea
-            required
-            rows={5}
-            className="w-full bg-black border border-[#2040a0] text-white px-4 py-3 rounded outline-none focus:border-[#4a7fff] transition-colors resize-none"
-            placeholder="Twoja wiadomość..."
-          />
-        </div>
-        <button
-          type="submit"
-          className="btn-navy w-full py-3.5 rounded text-sm font-heading uppercase tracking-widest"
+      <div className="flex flex-col items-center gap-4">
+        <a
+          href="https://discord.gg/zXXRawnzGc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-3 rounded-lg px-8 py-4 text-base font-semibold text-white transition-all hover:scale-105"
+          style={{
+            background: "#5865F2",
+            boxShadow: "0 0 0 rgba(88,101,242,0)",
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.boxShadow = "0 0 24px rgba(88,101,242,0.6), 0 0 48px rgba(88,101,242,0.3)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.boxShadow = "0 0 0 rgba(88,101,242,0)";
+          }}
         >
-          {sent ? "Wysłano ✓" : "Wyślij"}
-        </button>
-      </form>
-      <div className="flex items-center justify-center gap-4 mt-10">
-        {[
-          { label: "Instagram", icon: "M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.2-.1 1.6-.1 4.8-.1Zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.1a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 8.2a3.2 3.2 0 1 0 0-6.4 3.2 3.2 0 0 0 0 6.4Zm5.2-8.4a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z" },
-          { label: "Telegram", icon: "M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.5 3.64 12.2c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42Z" },
-          { label: "WhatsApp", icon: "M20 3.4A10.4 10.4 0 0 0 3.6 16l-1.5 5.4 5.5-1.4A10.4 10.4 0 1 0 20 3.4Zm-8 18.9a8.6 8.6 0 0 1-4.4-1.2l-.3-.2-3.3.9.9-3.2-.2-.3a8.6 8.6 0 1 1 7.3 4Zm4.7-6.5c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.8 1-.1.2-.3.2-.6.1-1.5-.8-2.5-1.4-3.5-3.1-.3-.5.3-.4.7-1.4 0-.2 0-.4-.1-.5l-.8-2c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4 0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.8 4.4.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0-.1-.2-.2-.5-.3Z" },
-        ].map((s) => (
-          <a
-            key={s.label}
-            href="#"
-            aria-label={s.label}
-            className="w-12 h-12 rounded-full flex items-center justify-center transition-all hover:scale-110"
-            style={{ background: "rgba(26,42,108,0.3)", border: "1.5px solid #2040a0", color: "#aac4ff" }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d={s.icon} />
-            </svg>
-          </a>
-        ))}
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+            <path d="M19.27 5.33A19.4 19.4 0 0 0 14.5 4l-.24.45c1.95.44 2.92 1.05 3.92 1.79-1.69-.88-3.36-1.71-6.18-1.71-2.82 0-4.49.83-6.18 1.71 1-.74 2.15-1.4 3.92-1.79L9.5 4a19.6 19.6 0 0 0-4.77 1.33C2.36 8.97 1.59 12.5 1.99 16c1.97 1.46 3.88 2.36 5.76 2.96.46-.62.87-1.29 1.22-2-.65-.24-1.28-.55-1.87-.92.16-.12.32-.24.47-.37 3.61 1.69 7.51 1.69 11.07 0 .15.13.31.25.47.37-.6.37-1.22.68-1.87.92.35.71.76 1.38 1.22 2 1.88-.6 3.79-1.5 5.76-2.96.46-4.06-.74-7.56-2.95-10.67ZM8.52 14.32c-1.13 0-2.07-1.05-2.07-2.34s.92-2.34 2.07-2.34c1.16 0 2.09 1.06 2.07 2.34 0 1.29-.92 2.34-2.07 2.34Zm6.96 0c-1.13 0-2.07-1.05-2.07-2.34s.92-2.34 2.07-2.34c1.16 0 2.09 1.06 2.07 2.34 0 1.29-.91 2.34-2.07 2.34Z"/>
+          </svg>
+          Dołącz do naszego Discorda
+        </a>
+        <p className="text-gray-500 text-xs mt-2">Najszybszy kontakt — odpowiadamy w ciągu kilku minut</p>
       </div>
     </section>
   );
@@ -332,12 +294,24 @@ function Contact() {
 function Footer() {
   return (
     <footer className="relative z-10 border-t border-[#2040a0]/60 bg-black/40 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col items-center gap-4">
+      <div className="max-w-7xl mx-auto px-4 py-10 flex flex-col items-center gap-2">
         <button onClick={scrollToTop}>
           <img src={logo} alt="Repzilla Reps" className="h-[60px] w-auto" />
         </button>
         <p className="text-gray-500 text-xs tracking-wider text-center">
           © 2025 Repzilla Reps — Wszelkie prawa zastrzeżone.
+        </p>
+        <p className="text-xs text-center" style={{ color: "#ffe600", textShadow: "0 0 8px #ffe600, 0 0 20px #ffe600, 0 0 40px #ffe600" }}>
+          powered by{" "}
+          <a
+            href="https://levelit.pl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+            style={{ color: "#ffe600", textShadow: "0 0 8px #ffe600, 0 0 20px #ffe600, 0 0 40px #ffe600" }}
+          >
+            LevelIT
+          </a>
         </p>
       </div>
     </footer>
