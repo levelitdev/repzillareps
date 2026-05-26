@@ -137,8 +137,64 @@
     border-color: var(--color-border);
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: #000000;
+    color: #e5e7eb;
+    font-family: "Inter", system-ui, sans-serif;
   }
 }
+
+.font-display {
+  font-family: "Orbitron", "Rajdhani", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.font-heading {
+  font-family: "Rajdhani", "Orbitron", sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.chrome-text {
+  background: linear-gradient(135deg, #4a90d9, #1a3a8f, #6ab0f5, #2050c0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.navy-glow {
+  box-shadow: 0 0 12px rgba(32, 64, 160, 0.4);
+  transition: all 0.3s ease;
+}
+.navy-glow:hover {
+  border-color: #4a7fff !important;
+  box-shadow: 0 0 24px rgba(74, 127, 255, 0.7);
+}
+
+.btn-navy {
+  background: #1a2a6c;
+  border: 1.5px solid #2040a0;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+.btn-navy:hover {
+  background: #2040a0;
+  box-shadow: 0 0 20px rgba(74, 127, 255, 0.6);
+}
+
+.btn-ghost-navy {
+  background: transparent;
+  border: 1.5px solid #2040a0;
+  color: #aac4ff;
+  transition: all 0.3s ease;
+}
+.btn-ghost-navy:hover {
+  border-color: #4a7fff;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(74, 127, 255, 0.5);
+}
+
